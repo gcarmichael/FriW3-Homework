@@ -1,0 +1,13 @@
+<a href="/bookmarks/new">New Bookmark</a>
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li>
+      <%= bookmark.name %>
+      <a href="/bookmarks/<%=bookmark.id%>/edit">Edit</a>
+      <form action="/bookmarks/<%=bookmark.id%>/delete" method='post'>
+      <button>Delete</button>
+      </form>
+    </li>
+  <% end %>
+</ul>
+
